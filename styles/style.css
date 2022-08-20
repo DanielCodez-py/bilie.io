@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     font-size: 16px;
     --palette-pry-c1: #173F5F;
@@ -11,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica,"SF Pro Text", "Space Grotesk", Poppins, Roboto, sans-serif;
+    font-family: Montserrat,"SF Pro Text", "Space Grotesk", Poppins, Roboto, sans-serif;
 }
 
 body {
@@ -136,8 +140,7 @@ h1, h2, h3, h4, h5, h6, p {
     border: 1px solid var(--palette-pry-c2);
     border-radius: 20px;
     aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     transition: .2s;
 }
 
@@ -154,11 +157,13 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .contentBox h1 {
-    font-family: "Space Grotesk";
-    /* max-width: 65%; */
-    font-size: 4.7rem;
+    font-size: 4.5rem;
     color: var(--palette-pry-c2);
     width: 80%;
+}
+
+#bilie {
+    
 }
 
 .contentBox p {
@@ -173,7 +178,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--palette-pry-c2);
     max-width: 120px;
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .contentBox a span {
