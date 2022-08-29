@@ -1,0 +1,159 @@
+:root {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "FONTSPRING DEMO - Biennale",  Montserrat, Inter, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background:  #505050;
+    position: relative;
+}
+
+#navBar {
+    width: 100%;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    position: absolute;
+    top: -10%; 
+    transition: .5s ease-in-out;
+    opacity: 0;
+    background: #0c1112;
+    max-height: 500px;
+}
+
+#navBar.active {
+    opacity: 1;
+    top:0;
+}
+
+.logo {
+    padding: 20px;
+    width: 10rem;
+}
+
+.navUl {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 15px;
+    justify-content: space-around;
+}
+
+.navItems {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-transform: lowercase;
+    color: #FFCC66;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: Inter;
+    line-height: 5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.navItems a {
+    text-decoration: none;
+    color: #173F5F;
+    font-weight: normal;
+    font-size: 4rem;
+    pointer-events: none;
+}
+
+.navItems::before {
+    content: "";
+    display: inline;
+    height: 2px;
+    width: 0;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    transition: cubic-bezier(0.63,-0.15, 0.21, 0.97) .5s all;
+}
+
+.navItems:hover::before {
+    width: 100%;
+}
+
+.hamIcon {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    transition: .5s ease-in-out;
+    z-index: 100;
+}
+
+
+.hamIcon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #000;
+    transition: .3s ease-in-out;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
+.hamIcon::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #000;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    transition: .5s ease-in-out;
+    /* margin-top: 10px; */
+}
+
+.hamIcon.active {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
+.hamIcon.active::before {
+    transform: translate3d(0px, 9px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    background: #173F5F;
+}
+
+.hamIcon.active::after {
+    transform: translate3d(0px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    background: #173F5F;
+}
+
+@media ( max-width: 900px ) {
+    #navBar .navUl {
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .navItems {
+        min-width: 35%;
+        font-size: 1rem;
+    }
+
+    .navItems a {
+        font-size: 2rem;
+    }
+}
