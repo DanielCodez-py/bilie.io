@@ -14,6 +14,7 @@ body {
     height: 100vh;
     background:  #505050;
     position: relative;
+    padding-top: 100px;
 }
 
 #navBar {
@@ -41,11 +42,7 @@ body {
     left: 50px;
     width: 10rem;
     z-index: 1000;
-    position: sticky;
-}
-
-.logo.active {
-    
+    position: fixed;
 }
 
 .navUl {
@@ -137,6 +134,10 @@ body {
     transform-style: preserve-3d;
 }
 
+.hamIcon:hover {
+    transform: scale(1.1);
+}
+
 .hamIcon:hover::after, .hamIcon:hover::before {
     background: #173F5F;
 }
@@ -175,4 +176,9 @@ body {
         margin: 20px;
         width: 30px;
     }
+}
+
+
+section.content-1 * {
+    font-family: Montserrat;
 }
